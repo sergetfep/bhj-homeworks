@@ -1,22 +1,16 @@
-(() => {
-  let playing = true,
-    activeHole = 1;
+function getHole(index) {
+  return document.getElementById(`hole${index}`);
+}
 
-  const stop = () => playing = true,
-    getHole = index => document.getElementById(`hole${index}`),
-    deactivateHole = index =>
-      getHole( index ).className = 'hole',
-    activateHole = index =>
-      getHole( index ).className = 'hole hole_has-mole',
-    next = () => setTimeout(() => {
-      if ( !playing ) {
-        return;
-      }
-      deactivateHole( activeHole );
-      activeHole = Math.floor( 1 + Math.random() * 9 );
-      activateHole( activeHole );
-      next();
-    }, 800 );
+function activateHole() {
+  const activeHole = document.querySelector(".hole_has-mole");
+  if (activeHole) {
+    activeHole.classList.remove("hole_has-mole");
+  }
 
-  next();
-})();
+  const randomIndex = Math.floor(1 + Math.random() * 9);
+  const newHole = getHole(randomIndex);
+  newHole.classList.add("hole_has-mole");
+}
+
+setInterval(activateHole, 800);
