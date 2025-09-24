@@ -11,3 +11,8 @@
   color: #fff;
 }
 
+.status__timer {
+  font-weight: bold;
+  color: #d9534f; /* красный */
+}
+
