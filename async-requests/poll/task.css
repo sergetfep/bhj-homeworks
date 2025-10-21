@@ -4,8 +4,32 @@ body {
 
 .card {
   width: 625px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .poll__title {
+  font-size: 20px;
+  font-weight: bold;
   margin-bottom: 20px;
+}
+
+.poll__answers button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.poll__answers button:hover {
+  background: #0056b3;
 }
